@@ -1,4 +1,6 @@
-// Array
+/* 
+**  Array
+*/
 
 const maxItemOfArray = (arr) => […arr].sort((a, b) => b — a).slice(0, 1)[0];
 
@@ -46,7 +48,10 @@ const shuffle = ([…array]) => {
 const arrayToCSV = (arr, delimiter = ',') =>
   arr.map(v => v.map(x => `"${x}"`).join(delimiter)).join('\n');
 
-// Math
+/* 
+**  Math
+*/
+
 const averageOf = (…numbers) => numbers.reduce((a, b) => a + b, 0) / numbers.length;
 
 const sumOf = (…numbers) => numbers.reduce((a, b) => a + b, 0);
@@ -65,7 +70,9 @@ const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 
 const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1))
 
-// String
+/* 
+**  String
+*/
 
 const toDecimalMarkString = num => num.toLocaleString('en-US');
 
@@ -91,7 +98,9 @@ const splitLines = str => str.split(/\r?\n/);
 const toCurrency = (n, curr, LanguageFormat = undefined) =>
   Intl.NumberFormat(LanguageFormat, { style: 'currency', currency: curr }).format(n);
 
-// Color
+/* 
+**  Color
+*/
 
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, ‘0’);
 
@@ -100,7 +109,9 @@ const randomHexColor = () => {
   return '#' + n.slice(0, 6);
 };
 
-// Date
+/* 
+**  Date
+*/
 
 const getTimeFromDate = date => date.toTimeString().slice(0, 8);
 
@@ -121,13 +132,17 @@ const tomorrow = () => {
   return t.toISOString().split('T')[0];
 };
   
-// Objects 
+/* 
+**  Objects
+*/
 
 const findKey = (obj, fn) => Object.keys(obj).find(key => fn(obj[key], key, obj));
 
 const shallowClone = obj => Object.assign({}, obj);
 
-// Browser
+/* 
+**  Browser
+*/
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 
@@ -156,7 +171,9 @@ const httpsRedirect = () => {
 
 const serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIComponent(val)}`;
 
-// DOM
+/* 
+**  DOM
+*/
 
 const insertBefore = (el, htmlString) => el.insertAdjacentHTML('beforebegin', htmlString);
 
@@ -184,7 +201,9 @@ const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
 
 const show = (...el) => [...el].forEach(e => (e.style.display = ''));
 
-// JSON
+/* 
+**  JSON
+*/
 
 const isValidJSON = string => {
   try {
@@ -195,7 +214,9 @@ const isValidJSON = string => {
   }
 };
 
-// Error handling
+/* 
+**  Error
+*/
 
 const attempt = (fn, ...args) => {
   try {
@@ -205,7 +226,9 @@ const attempt = (fn, ...args) => {
   }
 };
 
-// File system (requires fs)
+/* 
+**  File system (requires fs)
+*/
 
 const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined);
 
@@ -215,7 +238,9 @@ const readFileLines = filename =>
     .toString('UTF8')
     .split('\n');
 
-// Execution
+/* 
+**  Execution
+*/
 
 const times = (n, fn, context = undefined) => {
   let i = 0;
@@ -233,11 +258,15 @@ const logExecutionTime = callback => {
   return r;
 };
 
-// Function
+/* 
+**  Function
+*/
 
 const functionName = fn => (console.debug(fn.name), fn);
 
-// Types
+/* 
+**  Types
+*/
 
 const getType = v =>
   v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
