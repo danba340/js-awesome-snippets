@@ -273,7 +273,9 @@ const getType = v =>
 
 const is = (type, val) => ![, null].includes(val) && val.constructor === type; // is(Array, [1]);
 
-// Promise
+/* 
+**  Promise
+*/
 
 const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());
 
