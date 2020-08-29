@@ -197,7 +197,11 @@ export const functionName = fn => (console.debug(fn.name), fn);
 **  JSON
 */
 
-
+/**
+ * @function isValidJSON
+ * @param  {String} jsonString
+ * @return {Boolean} is jsonString valid JSON
+ */
 export const isValidJSON = string => {
   try {
     JSON.parse(string);
